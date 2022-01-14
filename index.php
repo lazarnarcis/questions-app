@@ -79,11 +79,22 @@
                     if ($newRow['questions'] >= 15) {
                         echo "Felicitari! Ai acumulat cele 15 puncte! Apasa aici pentru a ti le reseta! <a href='resetPoints.php'>Reseteaza punctele</a>";
                     } else {
-                        $results = mysqli_query($link, "SELECT COUNT(*) FROM `questions` WHERE minAge<=$myAge");
-                        $rows = mysqli_fetch_row($results)[0];
-                        $randomNumber = rand(1, $rows);
+                        $newQuestion = array();
+                        $results = mysqli_query($link, "SELECT * FROM questions WHERE minAge<=$myAge");
+                                                
+                        if (mysqli_num_rows($results) > 0) {
+                            while ($row = mysqli_fetch_assoc($results)) {
+                                array_push($newQuestion, $row['id']);
+                            }
+                        }
+                        
+                        $newResu = mysqli_query($link, "SELECT COUNT(*) FROM `questions` WHERE minAge<=$myAge");
+                        $newrow = mysqli_fetch_row($newResu)[0];
+                        $randomrow = rand(0, $newrow-1);
+                        
+                        $randomNumber = array_values($newQuestion)[$randomrow];
 
-                        $sql = "SELECT * FROM questions WHERE minAge<=$myAge AND id=$randomNumber";
+                        $sql = "SELECT * FROM questions WHERE id=$randomNumber";
                         $result = mysqli_query($link, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
