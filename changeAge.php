@@ -11,6 +11,8 @@
     
     if ($age > 60) {
         $age_err = "Varsta nu poate fi mai mare de 60 de ani.";
+    } else if ($age < 14) {
+        $age_err = "Varsta nu poate fi mai mica de 14 de ani.";
     } else {
         $age_1 = $age;
     }

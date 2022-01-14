@@ -44,7 +44,7 @@
         }
 
         if (empty($username_err) && empty($password_err) && empty($email_err)) {
-            $sql = "INSERT INTO users (username, email, password, admin, age) VALUES ('$username_1', '$email_1', '$password_1', 0, 0)";
+            $sql = "INSERT INTO users (username, email, password, admin, age) VALUES ('$username_1', '$email_1', '$password_1', 0, 14)";
             mysqli_query($link, $sql);
             header("location: login.php");
         }

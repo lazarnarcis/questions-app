@@ -66,7 +66,7 @@
                         <input type="checkbox" name="checkbox" id="checkbox">
                         <label for="checkbox">Bifand aceasta casuta confirmati ca vreti sa raspundeti la cele 15 intrebari.</label>
                         <p><?php echo $checkbox_err; ?></p>
-                        <input type="submit" value="Sunt de acord">
+                        <input type="submit" id='send-responses' value="Sunt de acord">
                     </form>
                 <?php } else {
                     $myAge = $_SESSION['age'];
