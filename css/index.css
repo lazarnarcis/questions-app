@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(235, 235, 235);
+}
+
+.new-on-page {
+    bottom: 15px;
+    right: 15px;
+    position: absolute;
+    box-shadow: 0px 0px 10px grey;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.text-right-bottom {
+    margin: 10px;
+    width: 200px; 
+    word-wrap: break-word;
+}
+
+.app {
+    margin: 20px;
+}
+
+.question {
+    padding: 5px;
+    background: lightgrey;
+    color: black;
+}
+
+ul {
+    display: block;
+}
+
+#send-responses {
+    margin: 10px 0 0 0;
+    padding: 6px;
+    border: 2px solid rgb(84, 86, 104);
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 5px grey;
+    transition: all .3s;
+}
+
+#send-responses:hover {
+    background-color: grey;
+    color: white;
+}
+
+.question {
+    padding: 15px;
+}
+
+.question h2 {
+    margin: 0 0 10px 0;
+}
+
+#error {
+    color: rgb(21, 80, 107);
+}

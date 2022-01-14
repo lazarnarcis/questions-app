@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(235, 235, 235);
+}
+
+.app {
+    margin: 20px;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+#change-name, #change-email, #change-age {
+    font-style: italic;
+    color: white;
+    padding: 10px;
+    background: rgb(60, 77, 82);
+    border-radius: 25px;
+    transition: all .3s;
+}
+
+#change-name:hover, #change-email:hover, #change-age:hover {
+    cursor: pointer;
+    background: rgb(12, 17, 39);
+}
+
+#form, #form1, #form2 {
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+#newName {
+    margin-left: 15px;
+    display: flex;
+}
+
+.input-text {
+    border: 2px solid transparent;
+    padding: 7.5px;
+    color: rgb(17, 54, 30);
+    border-radius: 5px;
+    outline: none;
+    background: lightgrey;
+    transition: border .3s;
+    min-width: 250px;
+}
+
+.input-text:focus {
+    border-color: rgb(0, 0, 0);
+    background: rgb(124, 124, 124);
+}
+
+::placeholder {
+    color: rgb(22, 21, 75);
+}
+
+#submit {
+    padding: 7.5px;
+    border: none;
+    background: rgb(20, 66, 83);
+    border-radius: 7.5px;
+    transition: all .3s;
+    color: white;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background:rgb(30, 39, 39);
+}
+
+h1 {
+    margin: 5px 0;
+}
