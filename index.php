@@ -113,6 +113,11 @@
                                 $newString .= "<input type='radio' id='question$secondvar' value='$number' name='question'/><label for='question$secondvar'>$question_num</label></li>";
                             }
                             $button_number_question = $user_questions + 1;
+                            if ($user_questions == 15) {
+                                $question_value = "Trimite raspunsurile!";
+                            } else {
+                                $question_value = "Urmatoarea intrebare ($button_number_question)";
+                            }
                             echo "
                                 <div class='question'>
                                     <form action='$action_php' method='POST'>
@@ -120,7 +125,7 @@
                                         $newString
                                         <input type='text' name='corResVal' value='$correctResponse' style='display: none' />
                                         <p id='error'>$question1_err</p>
-                                        <input type='submit' name='questions' id='send-responses' value='Urmatoarea intrebare ($button_number_question)' />
+                                        <input type='submit' name='questions' id='send-responses' value='$question_value' />
                                     </form>
                                 </div>
                             ";

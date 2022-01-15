@@ -29,8 +29,8 @@
             $username_1 = $username;
         }
 
-        if (strlen($email) > 20) {
-            $email_err = "E-mailul nu poate fi mai lung de 20 de caractere.";
+        if (strlen($email) > 40) {
+            $email_err = "E-mailul nu poate fi mai lung de 40 de caractere.";
         } else if ($search_email == $email) {
             $email_err = "Acest e-mail exista deja in baza de date!";
         } else {
