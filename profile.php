@@ -19,6 +19,7 @@
     $username = $row['username'];
     $useremail = $row['email'];
     $userage = $row['age'];
+    $userquestions = $row['questions'];
   }
   mysqli_close($link);
 ?>
@@ -36,7 +37,7 @@
     <div class='app'>
       <div class='name'>
         <h1>Profilul lui <?php echo $username; ?></h1>
-        <?php if ($_SESSION['id'] == $userid) { ?>
+        <?php if (isset($_SESSION['id']) && $_SESSION['id'] == $userid) { ?>
           <div id='newName'>
             <span id='change-name' onclick="changeName('change-name', 'form');">Schimba-ti numele</span>
             <form action="changeName.php" method="POST" id="form">
@@ -49,7 +50,7 @@
       </div>
       <div class="name">
         <h1>E-mail: <?php echo $useremail; ?></h1>
-        <?php if ($_SESSION['id'] == $userid) { ?>
+        <?php if (isset($_SESSION['id']) && $_SESSION['id'] == $userid) { ?>
           <div id='newName'>
             <span id='change-email' onclick="changeName('change-email', 'form1');">Schimba-ti emailul</span>
             <form action="changeEmail.php" method="POST" id="form1">
@@ -62,7 +63,7 @@
       </div>
       <div class="name">
         <h1>Varsta: <?php echo $userage; ?> ani</h1>
-        <?php if ($_SESSION['id'] == $userid) { ?>
+        <?php if (isset($_SESSION['id']) && $_SESSION['id'] == $userid) { ?>
           <div id='newName'>
             <span id='change-age' onclick="changeName('change-age', 'form2');">Schimba-ti varsta</span>
             <form action="changeAge.php" method="POST" id="form2">
@@ -73,8 +74,8 @@
           </div>
         <?php } ?>
       </div>
-      <?php if ($_SESSION['questions'] >= 15) {
-        if ($_SESSION['id'] == $userid) {
+      <?php if ($userquestions >= 15) {
+        if (isset($_SESSION['id']) && $_SESSION['id'] == $userid) {
           $word = "Ai";
         } else {
           $word = "A";
