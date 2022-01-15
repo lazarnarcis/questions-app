@@ -16,7 +16,7 @@
     <div class="app">
         <h1>Mai jos puteti vedea (daca exista) o lista cu toti utilizatorii si scorul acestora:</h1>
         <?php
-            $sql = "SELECT * FROM users";
+            $sql = "SELECT * FROM users ORDER BY questions DESC";
             $result = mysqli_query($link, $sql);
             
             if (mysqli_num_rows($result) > 0) {
@@ -25,7 +25,12 @@
                     $user_name = $row['username'];
                     $user_email = $row['email'];
                     $user_id = $row['id'];
-                    echo "<h2><a href='profile.php?id=$user_id'>$user_name</a> ($user_email) - $user_score puncte</h2>";
+                    if ($user_score == 15) {
+                        $total_points = "<span style='color: red'>$user_score puncte</span> (a terminat de raspuns la toate intrebarile. felicitari!)";
+                    } else {
+                        $total_points = "<span style='color: black'>$user_score puncte</span>";
+                    }
+                    echo "<h2><a href='profile.php?id=$user_id'>$user_name</a> ($user_email) - $total_points</h2>";
                 }
             }
             mysqli_close($link);

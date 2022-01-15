@@ -61,10 +61,10 @@
         <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) { ?>
             <div>
                 <?php if ($_SESSION['response'] == 0) { ?>
-                    <h2>Esti de acord sa raspunzi la 15 intrebari?</h2>
+                    <h2>Esti de acord sa raspunzi la <b>15 intrebari</b>?</h2>
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                         <input type="checkbox" name="checkbox" id="checkbox">
-                        <label for="checkbox">Bifand aceasta casuta confirmati ca vreti sa raspundeti la cele 15 intrebari.</label>
+                        <label for="checkbox">Bifand aceasta casuta confirmati ca vreti sa raspundeti la cele <b>15 intrebari</b>.</label>
                         <p><?php echo $checkbox_err; ?></p>
                         <input type="submit" id='send-responses' value="Sunt de acord">
                     </form>
@@ -132,6 +132,14 @@
                         }
                     }
                 } ?>
+            </div>
+        <?php } else { ?>
+            <div>
+                <h2>Instructiuni (despre site):</h2>
+                <p>Facandu-va cont pe acest site veti putea sa raspundeti la cele <b>15 intrebari</b> (random). Link catre pagina de inregistrare gasiti in dreapta jos sau in header.</p>
+                <p>Va puteti reseta cele <b>15 intrebari</b> pentru a putea raspunde la alte <b>15 intrebari</b>. Va poate pica si 2 intrebari una dupa alta pentru ca ele sunt random.</p>
+                <p>Dupa crearea contului veti fi redirectionat catre pagina de logare pentru a va loga.</p>
+                <p>Puteti vedea scorul oricarui utilizator de pe site. (chiar daca nu aveti deja un cont creat)</p>
             </div>
         <?php } ?>
     </div>
