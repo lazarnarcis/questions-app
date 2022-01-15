@@ -74,7 +74,12 @@
         <?php } ?>
       </div>
       <?php if ($_SESSION['questions'] >= 15) {
-        echo "<h1>A raspuns la cele 15 intrebari!</h1>";
+        if ($_SESSION['id'] == $userid) {
+          $word = "Ai";
+        } else {
+          $word = "A";
+        }
+        echo "<h1>$word raspuns la cele 15 intrebari!</h1>";
       } ?>
     </div>
     <script src="script/profile.js?v=<?php echo time(); ?>" type="text/javascript"></script>
