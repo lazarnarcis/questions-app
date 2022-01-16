@@ -24,9 +24,10 @@ body {
 }
 
 .question {
-    padding: 5px;
+    padding: 10px;
     background: lightgrey;
-    color: black;
+    box-shadow: 5px 5px 10px grey;
+    border-radius: 20px;
 }
 
 ul {
@@ -35,21 +36,19 @@ ul {
 
 #send-responses {
     margin: 10px 0 0 0;
-    padding: 6px;
-    border: 2px solid rgb(84, 86, 104);
+    padding: 10px;
+    font-size: 15px;
+    border: none;
     border-radius: 6px;
     cursor: pointer;
-    box-shadow: inset 0px 0px 5px grey;
+    background: white;
+    color: black;
     transition: all .3s;
 }
 
 #send-responses:hover {
     background-color: grey;
     color: white;
-}
-
-.question {
-    padding: 15px;
 }
 
 .question h2 {
